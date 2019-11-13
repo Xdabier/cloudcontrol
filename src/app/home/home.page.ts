@@ -10,13 +10,14 @@ import {ToastController} from '@ionic/angular';
 export class HomePage {
     rememberMe = false;
     rememberPage = false;
-    email = 'test@test.fr';
-    password = 't';
-    server = 'https://clc-sit.cloudcontrol.fr';
+    email = '';
+    password = '';
+    server = '';
 
 
     // tslint:disable-next-line:variable-name
     constructor(private _router: Router, public toastController: ToastController) {
+
     }
 
     async submit(): Promise<any> {
@@ -29,6 +30,10 @@ export class HomePage {
                 rememberPage: this.rememberPage
             }
         };
+        // saving items in localstorage
+        if (this.rememberMe) {
+            localStorage.setItem('authData', JSON.stringify(ops.queryParams));
+        }
 
         try {
             if (await this.verifyInput()) {
