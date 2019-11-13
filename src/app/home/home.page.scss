@@ -1,1 +1,11 @@
-
+.submitBtn {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  .sub {
+    height: 8vh;
+    font-size: larger;
+    color: #a60000!important;
+    background-color: whitesmoke;
+  }
+}

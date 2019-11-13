@@ -1,14 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <div class="mainDiv ion-padding">
+        <img src="../../assets/logo.png" alt="cloudcontrole logo">
+        <!--__________________________________________________________________-->
+        <!--__________________________________________________________________-->
+        <div class="mainForm">
+
+            <ion-item>
+                <ion-label position="floating">Serveur</ion-label>
+                <ion-input type="text" placeholder="ex. : https://myportal.cloudcontrol.fr" required  [(ngModel)]="server"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">E-mail</ion-label>
+                <ion-input type="email" required placeholder="ex. : email@example.com" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Mot de passe</ion-label>
+                <ion-input type="password" required placeholder="Votre mot de passe" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <br>
+            <br>
+            <br>
+            <ion-item>
+                <ion-label>Se souvenir de moi</ion-label>
+                <ion-checkbox color="medium" slot="end" [(ngModel)]="rememberMe"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Se souvenir de la dernière page</ion-label>
+                <ion-checkbox color="medium" slot="end" [(ngModel)]="rememberPage"></ion-checkbox>
+            </ion-item>
+        </div>
+      <div class="submitBtn">
+        <ion-button (click)="submit()" class="sub" expand="full">Confirmer</ion-button>
+      </div>
+    </div>
 </ion-content>
