@@ -32,7 +32,6 @@ export class ServerPage implements AfterViewInit {
     }
 
     injectPassword() {
-
         console.log(document.getElementById('_iframe'));
     }
 }
