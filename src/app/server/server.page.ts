@@ -1,7 +1,8 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-const urlParamsPrefix = `/web/login?login=`;
+const urlParamsPrefixLogin = `/web/login?login=`;
+const urlParamsPrefix = `/web/`;
 
 @Component({
     selector: 'app-home',
@@ -18,7 +19,7 @@ export class ServerPage implements AfterViewInit {
     constructor(private _route: ActivatedRoute) {
         _route.queryParams.subscribe(params => {
             console.log(params);
-            this.url = `${params.server}${urlParamsPrefix}${params.login}`;
+            this.url = `${params.server}${params.login ? urlParamsPrefixLogin : urlParamsPrefix}${params.login ? params.login  : ''}`;
         });
     }
 

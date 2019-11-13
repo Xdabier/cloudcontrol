@@ -18,7 +18,7 @@ export class AuthGuardGuard implements CanActivate {
             return true;
         } else {
             this._router.navigate(['server'], {
-                queryParams: JSON.parse(authData)
+                queryParams: {server: JSON.parse(authData).server}
             });
             return false;
         }
